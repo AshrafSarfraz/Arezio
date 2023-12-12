@@ -148,8 +148,9 @@ export default function SignUp() {
             />
           </View>
         </View>
-
-        <Button  marginTop={'10%'} title={'Sign Up'} />
+<TouchableOpacity onPress={() => navigation.navigate('ProfileSetup')}>
+        <Button onPress={() => navigation.navigate('ProfileSetup')}  marginTop={'10%'} title={'Sign Up'} />
+        </TouchableOpacity>
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>Already have an account?</Text>
           <TouchableOpacity style={styles.footerLinkContainer} onPress={() => navigation.navigate('Signin')}>

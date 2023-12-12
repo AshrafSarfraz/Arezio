@@ -9,6 +9,7 @@ import ForgotPassword from '../screens/Auth/ForgotPassword';
 import ForgotPasswordOtp from '../screens/Auth/ForgotPasswordOtp';
 import ForgotPasswordChange from '../screens/Auth/ForgotPassword';
 import ForgotPasswordC from '../screens/Auth/ForgotPasswordC';
+import { ProfileSetup } from '../screens/ProfileSetup';
 
 const Stack = createNativeStackNavigator()
 
@@ -27,6 +28,7 @@ const StackNavigation = () => {
                 <Stack.Screen name={'ForgotPassword'} component={ForgotPassword} />
                 <Stack.Screen name={'ForgotPasswordOtp'} component={ForgotPasswordOtp} />
                 <Stack.Screen name={'ForgotPasswordC'} component={ForgotPasswordC} />
+                <Stack.Screen name={'ProfileSetup'} component={ProfileSetup} />
 
             </Stack.Navigator>
         </NavigationContainer>
