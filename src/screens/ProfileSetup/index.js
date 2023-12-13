@@ -2,10 +2,12 @@ import { View, Text, ScrollView, TouchableOpacity, Image, Modal, TextInput } fro
 import React, { useState } from 'react'
 import { styles } from './styles'
 import Button from '../../components/reuseables/Button';
+import FastImage from 'react-native-fast-image';
 
-export const ProfileSetup = () => {
+export const ProfileSetup = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [modalVisible2, setModalVisible2] = useState(false);
+    const [modalVisible3, setModalVisible3] = useState(false);
     const openModal = () => {
         setModalVisible(true);
     };
@@ -19,6 +21,13 @@ export const ProfileSetup = () => {
 
     const closeModal2 = () => {
         setModalVisible2(false);
+    };
+    const openModal3 = () => {
+        setModalVisible3(true);
+    };
+
+    const closeModal3 = () => {
+        setModalVisible3(false);
     };
     return (
         <View style={styles.Container}>
@@ -53,7 +62,7 @@ export const ProfileSetup = () => {
                             <Text style={styles.DateTextStyle}>DD</Text>
                         </View>
                         <View style={styles.Dash}>
-                        <Text style={styles.DashStyles}>-</Text>
+                            <Text style={styles.DashStyles}>-</Text>
                         </View>
                         <View style={styles.Month}>
                             <Text style={styles.DateTextStyle}>MM</Text>
@@ -79,20 +88,40 @@ export const ProfileSetup = () => {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.Field}>
-                    <Text style={styles.Label}> Preferred Language</Text>
-                       
-         <View style={styles.TextArea}>             
-    <TextInput
-      style={styles.TextAreaStyle}
-      placeholder="Write Here"
-      placeholderTextColor="grey"
-      numberOfLines={5}
-      multiline={true}
-    />
-    </View>     
-                </View>
-                <Button  marginTop={'10%'} title={'Continue'}/>
+                    <Text style={styles.Label}> Tell us about yourself</Text>
 
+                    <View style={styles.TextArea}>
+                        <TextInput
+                            style={styles.TextAreaStyle}
+                            placeholder="Write Here"
+                            placeholderTextColor="grey"
+                            numberOfLines={5}
+                            multiline={true}
+                        />
+                    </View>
+                </View>
+                <TouchableOpacity onPress={openModal3} >
+                    <Button onPress={openModal3} marginTop={'10%'} title={'Continue'} />
+                </TouchableOpacity>
+                <Modal
+                    visible={modalVisible3}
+                    transparent
+                    animationType='fade'
+                    onRequestClose={closeModal3}
+                >
+                    <TouchableOpacity style={styles.modalContainer3} onPress={closeModal3}>
+                        <View style={styles.contentContainer3}>
+                            <FastImage
+                                resizeMode="stretch"
+                                style={{ width: 200, height: 200 }}
+                                source={require('../../Assets/images/Profile/success.gif')}
+                            />
+                            <Text style={styles.Option13}>Alright! Your account is ready to use!</Text>
+                            <Button marginTop={'8%'} title={'Continue'} />
+
+                        </View>
+                    </TouchableOpacity>
+                </Modal>
                 <Modal
                     visible={modalVisible}
                     transparent
