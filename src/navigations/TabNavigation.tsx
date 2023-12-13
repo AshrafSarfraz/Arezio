@@ -1,9 +1,8 @@
-import { StyleSheet, View, Image } from 'react-native'
+import { StyleSheet, View, Image, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import * as screens from '../screens';
-import { COLOR } from '../data/StyleGuides';
-import { SCREEN } from '../data/enums';
+import { COLOR, FONT } from '../data/StyleGuides';
+import Home from '../screens/Home';
 
 
 const Tab = createBottomTabNavigator();
@@ -16,24 +15,75 @@ const TabNavigation = () => {
                 position: 'absolute',
             height:70,
                 elevation: 0,
-                backgroundColor: COLOR.white,
+                backgroundColor: COLOR.primary,
                 borderTopColor: 'transparent',
-                borderTopLeftRadius:40,
-                borderTopRightRadius:40
+              borderRadius:20,
+                bottom:20,
+                marginHorizontal:'5%'
             }
             
             }}>
 
             <Tab.Screen
-                name={SCREEN.Home}
-                component={screens.Home}
+                name={'Home'}
+                component={Home}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.tabBarIconContainer}>
                             <Image
-                                source={focused ? require('../Assets/icons/Home.png') : require('../Assets/icons/whiteHome.png') }
+                                source={focused ? require('../Assets/images/Home/Home.png') : require('../Assets/images/Home/homegrey.png') }
                                 style={styles.tabBarIcon}
                             />
+                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Home</Text>
+                        </View>
+                    ),
+                }}
+            />
+
+<Tab.Screen
+                name={'Birthday'}
+                component={Home}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <View style={styles.tabBarIconContainer}>
+                            <Image
+                                source={focused ? require('../Assets/images/Home/Calendar.png') : require('../Assets/images/Home/Calendargrey.png') }
+                                style={styles.tabBarIcon}
+                            />
+                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Birthdays</Text>
+                        </View>
+                    ),
+                }}
+            />
+
+
+<Tab.Screen
+                name={'Reel'}
+                component={Home}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <View style={styles.tabBarIconContainer}>
+                            <Image
+                                source={focused ? require('../Assets/images/Home/video-vertical.png') : require('../Assets/images/Home/videoverticalgrey.png') }
+                                style={styles.tabBarIcon}
+                            />
+                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Reels</Text>
+                        </View>
+                    ),
+                }}
+            />
+
+<Tab.Screen
+                name={'Chats'}
+                component={Home}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <View style={styles.tabBarIconContainer}>
+                            <Image
+                                source={focused ? require('../Assets/images/Home/Chat.png') : require('../Assets/images/Home/Chatrey.png') }
+                                style={styles.tabBarIcon}
+                            />
+                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Chats</Text>
                         </View>
                     ),
                 }}
@@ -41,44 +91,22 @@ const TabNavigation = () => {
 
             <Tab.Screen
                 name={'a'}
-                component={screens.RedeemRewards}
+                component={Home}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.tabBarIconContainer}>
                             <Image
-                                source={focused ? require('../Assets/icons/reward.png') : require('../Assets/icons/whitereward.png')}
+                                source={focused ? require('../Assets/images/Home/Profile.png') : require('../Assets/images/Home/Profilegrey.png')}
                                 style={styles.tabBarHomeIcon} />
+                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Profile</Text>
+
+
                         </View>
                     ),
                 }}
             />
 
-            <Tab.Screen
-                name={'b'}
-                component={screens.MyOrders}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabBarIconContainer}>
-                            <Image source={focused ? require('../Assets/icons/cart.png') : require('../Assets/icons/whitecart.png')}
-                                style={styles.tabBarIcon} />
-                        </View>
-                    ),
-                }}
-            />
-
-            <Tab.Screen
-                name={'Account'}
-                component={screens.Account}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabBarIconContainer}>
-                            <Image
-                                source={focused ? require('../Assets/icons/reduser.png') : require('../Assets/icons/User.png')} style={styles.tabBarIcon}
-                            />
-                        </View>
-                    ),
-                }}
-            />
+        
             
         </Tab.Navigator >
     )
@@ -109,7 +137,9 @@ const styles = StyleSheet.create({
         right: 0,
         height: 3,
         backgroundColor: COLOR.primary,
-    },
+    },title:{
+        marginTop:'10%',fontSize:10,fontFamily:FONT.Urbanist_Medium
+    }
 })
 
 

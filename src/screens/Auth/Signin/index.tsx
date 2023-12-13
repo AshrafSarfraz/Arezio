@@ -55,7 +55,7 @@ addRight={<Image source={passwordVisible ? require('../../../Assets/images/Signi
   </View>
 </View>
 <CustomCheckbox onPress={()=>navigation.navigate('ForgotPassword')} />
-<Button  marginTop={'10%'} title={'Sign In'}/>
+<Button onPress={()=>navigation.navigate('TabNavigator')}  marginTop={'10%'} title={'Sign In'}/>
 <View style={styles.footerContainer}>
   <Text style={styles.footerText}>Don’t have an account?</Text>
   <TouchableOpacity onPress={()=>navigation.navigate('Signup')} style={styles.footerLinkContainer}>
