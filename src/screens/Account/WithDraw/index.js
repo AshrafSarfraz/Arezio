@@ -5,7 +5,7 @@ import Input from '../../../components/reuseables/Input'
 import { COLOR } from '../../../data/StyleGuides'
 import Button from '../../../components/reuseables/Button'
 
-export const WithDraw = () => {
+export const WithDraw = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const openModal = () => {
         setModalVisible(true);
@@ -40,10 +40,11 @@ export const WithDraw = () => {
     <ScrollView>
 
     <View style={styles.headerContainer}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Image style={styles.backIcon} source={require('../../../Assets/images/Signup/back.png')} />
-      </TouchableOpacity>
-    </View>
+  <TouchableOpacity onPress={()=>navigation.goBack()} style={styles.backButton}>
+    <Image style={styles.backIcon} source={require('../../../Assets/images/Signup/back.png')} />
+  </TouchableOpacity>
+  <Text style={styles.headerText}>Refer to Earn</Text>
+</View>
 
       <View style={styles.container}>
         

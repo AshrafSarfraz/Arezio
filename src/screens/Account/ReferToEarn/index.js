@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { styles } from './styles'
 
 
-export const ReferToEarn = () => {
+export const ReferToEarn = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const openModal = () => {
         setModalVisible(true);
@@ -16,6 +16,12 @@ export const ReferToEarn = () => {
     return (
         <View style={styles.Container}>
             <ScrollView>
+            <View style={styles.headerContainer}>
+  <TouchableOpacity onPress={()=>navigation.goBack()} style={styles.backButton}>
+    <Image style={styles.backIcon} source={require('../../../Assets/images/Signup/back.png')} />
+  </TouchableOpacity>
+  <Text style={styles.headerText}>Refer to Earn</Text>
+</View>
                 <View style={styles.Header}>
                     <View style={styles.HeaderSection1}>
                         <ImageBackground

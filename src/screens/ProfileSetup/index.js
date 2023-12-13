@@ -97,6 +97,7 @@ export const ProfileSetup = ({ navigation }) => {
                             placeholderTextColor="grey"
                             numberOfLines={5}
                             multiline={true}
+                            textAlignVertical='top'
                         />
                     </View>
                 </View>

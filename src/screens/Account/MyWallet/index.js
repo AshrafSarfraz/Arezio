@@ -1,21 +1,33 @@
-import { View, Text, SafeAreaView, ScrollView, ImageBackground, Image, } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView, ImageBackground, Image, TouchableOpacity, } from 'react-native'
 import React from 'react'
 import { styles } from './styles'
 import Button from '../../../components/reuseables/Button'
-export const MyWallet = () => {
+import BotttomHeight from '../../../components/reuseables/BotttomHeight'
+
+
+export const MyWallet = ({navigation}) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.Container}>
       <ScrollView>
-        <View style={styles.Container}>
+
+    
+        <View >
+
+        <View style={styles.headerContainer}>
+  <TouchableOpacity  onPress={()=>navigation.goBack()} style={styles.backButton}>
+    <Image style={styles.backIcon} source={require('../../../Assets/images/Signup/back.png')} />
+  </TouchableOpacity>
+  <Text style={styles.headerText}>My Wallet</Text>
+</View>
           <View style={styles.Header}>
-            <ImageBackground style={{ height: 100, width: "95%", margin: 20 }}
+            <ImageBackground style={{ height: 100, width: "95%", margin: 20 ,marginTop:'8%'}}
               imageStyle={{ borderRadius: 10 }}
               source={require('../../../Assets/images/Profile/Mywallet/Header_Background.png')}>
               <Text style={styles.Heading}>Earning in total</Text>
               <Text style={styles.SubHeading}>2,85,856.20$</Text>
             </ImageBackground>
             <Text style={styles.Title}>History</Text>
-            <View style={styles.WalletCard}>
+            <View style={[styles.WalletCard,{marginTop:'4%'}]}>
               <View style={styles.WalletImg}>
                 <Image source={require('../../../Assets/images/Profile/Mywallet/Avatar.png')} />
               </View>
@@ -63,10 +75,11 @@ export const MyWallet = () => {
 
               </View>
             </View>
-            <Button marginTop={'55%'} title={'Continue'} />
+            <Button onPress={()=>navigation.navigate('WithDraw')} marginTop={'55%'} title={'Withdraw'} />
 
           </View>
         </View>
+        <BotttomHeight/>
       </ScrollView>
     </SafeAreaView>
   )

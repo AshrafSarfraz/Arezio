@@ -4,7 +4,7 @@ import { styles } from './styles'
 import CustomCheckbox from '../../../components/reuseables/CheckBox'
 
 
-export const Language = () => {
+export const Language = ({navigation}) => {
     const [isChecked, setIsChecked] = useState(false);
     const [isChecked1, setIsChecked1] = useState(false);
 
@@ -18,7 +18,14 @@ export const Language = () => {
     return (
         <View style={styles.Container}>
             <ScrollView>
-                <View style={styles.Language}>
+
+            <View style={styles.headerContainer}>
+  <TouchableOpacity  onPress={()=>navigation.goBack()} style={styles.backButton}>
+    <Image style={styles.backIcon} source={require('../../../Assets/images/Signup/back.png')} />
+  </TouchableOpacity>
+  <Text style={styles.headerText}>Language</Text>
+</View>
+                <View style={[styles.Language,{marginTop:'8%'}]}>
                     <Text style={styles.Language_Text}>English</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: "space-between", marginHorizontal: "5%", marginTop: '2%' }}>
                         <TouchableOpacity onPress={handleToggleCheckbox} style={{ flexDirection: 'row', alignItems: 'center' }}>

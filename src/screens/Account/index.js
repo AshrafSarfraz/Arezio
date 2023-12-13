@@ -4,7 +4,7 @@ import { styles } from './styles'
 import { Toggle_Button } from '../../components/reuseables/Toggle_Button'
 import BotttomHeight from '../../components/reuseables/BotttomHeight'
 
-export const Account = () => {
+export const Account = ({navigation}) => {
     return (
         <SafeAreaView style={styles.Container}>
             <ScrollView>
@@ -69,7 +69,7 @@ export const Account = () => {
                             </View>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('MyWallet')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
                                 <Image source={require("../../Assets/images/Profile/wallet.png")} />
@@ -84,7 +84,8 @@ export const Account = () => {
                             </View>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={()=>navigation.navigate('ReferToEarn')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
                                 <Image source={require("../../Assets/images/Profile/user-add.png")} />
@@ -99,11 +100,11 @@ export const Account = () => {
                             </View>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Language')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
                                 <Image source={require("../../Assets/images/Profile/translate.png")} />
-
+                                
                             </View>
                             <View style={styles.Plan_Text}>
                                 <Text style={styles.Plan_TextStyles}>Language</Text>
@@ -130,7 +131,7 @@ export const Account = () => {
                             </View>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Aboutus')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
                                 <Image source={require("../../Assets/images/Profile/people.png")} />

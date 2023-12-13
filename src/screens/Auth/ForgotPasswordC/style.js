@@ -109,6 +109,34 @@ export const styles = StyleSheet.create({
     height: 79, width: 83
   },forgotConmain:{
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'
-  }
+  }, modalContainer3: {
+    flex: 1,
+    // marginTop: "60%",
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    
+  },
+  contentContainer3: {
+    width: "90%",
+    backgroundColor: "white",
+    borderRadius: 10,
+    padding: 10,
+    alignItems: 'center',
+    height: 340,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+  },Option13: {
+    fontFamily:FONT.Urbanist_SemiBold,
+    color: COLOR.black,
+    fontSize:18
+  },
  
 });

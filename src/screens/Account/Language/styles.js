@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         backgroundColor: COLOR.white,
     },
     Language:{
-        flexDirection:"row"
+        flexDirection:"row",
     },
     Language_Text:{
         flex:1,
@@ -35,6 +35,25 @@ export const styles = StyleSheet.create({
       checkmark: {
         color: '#fff', // Change the checkmark color
         fontSize: 16,
+      },
+      headerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: '8%',
+        marginLeft: '5%',
+      },
+      backButton: {
+        // Style for the back button
+      },
+      backIcon: {
+        height: 28,
+        width: 28,
+      },
+      headerText: {
+        fontSize: 20,
+        fontFamily: FONT.Urbanist_SemiBold,
+        color: COLOR.black,
+        marginLeft: '5%',
       },
   
 });

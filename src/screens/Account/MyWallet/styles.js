@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     Container: {
         flex: 1,
         backgroundColor: COLOR.white,
-        marginTop:30
     },
     Heading: {
         color: COLOR.white,
@@ -88,6 +87,24 @@ export const styles = StyleSheet.create({
     Ratting_ImgStyle:{
         height:40,
         width:40
-    }
+    }, headerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: '8%',
+        marginLeft: '5%',
+      },
+      backButton: {
+        // Style for the back button
+      },
+      backIcon: {
+        height: 28,
+        width: 28,
+      },
+      headerText: {
+        fontSize: 20,
+        fontFamily: FONT.Urbanist_SemiBold,
+        color: COLOR.black,
+        marginLeft: '5%',
+      },
 
 });

@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList, ImageBackground ,ScrollView} from 'react-native'
+import { View, Text, Image, FlatList, ImageBackground ,ScrollView, TextInput} from 'react-native'
 import React from 'react'
 import { COLOR, FONT } from '../../data/StyleGuides'
 import { styles } from './styles'
@@ -61,9 +61,33 @@ const navigation = useNavigation()
           source={require('../../Assets/images/Home/dots.png')}
         />
       </View>
-    </ImageBackground>
-<Text style={{fontSize:14,color:COLOR.black,marginLeft:'5%',marginTop:'2%'}}>Amidst the breathtaking serenity of this picturesque hill, nature joins us in celebrating..See  more</Text>
 
+
+      <View style={styles.Rowcontainer}>
+    <ImageBackground style={styles.iconContainer} source={require('../../Assets/images/Home/trans.png')}>
+      <Image style={styles.iconImage} source={require('../../Assets/images/Home/whiteheart.png')} />
+      <Text style={styles.text3}>5.2k</Text>
+    </ImageBackground>
+
+    <ImageBackground style={[styles.iconContainer, { marginLeft: '5%' }]} source={require('../../Assets/images/Home/trans.png')}>
+      <Image style={styles.iconImage} source={require('../../Assets/images/Home/messages.png')} />
+      <Text style={[styles.text3, { marginLeft: '8%' }]}>1.1k</Text>
+    </ImageBackground>
+  </View>
+
+
+    </ImageBackground>
+    <Text style={styles.mainText}>
+      Amidst the breathtaking serenity of this picturesque hill, nature joins us in celebrating..See more
+    </Text>
+    <View style={styles.commentContainer}>
+      <Image style={styles.commentImage} source={require('../../Assets/images/Home/Ellipse.png')} />
+      <TextInput
+        style={styles.commentInput}
+        placeholderTextColor={'grey'} // Assuming COLOR.grey_1 is equivalent to 'grey'
+        placeholder="Add a Comment here"
+      />
+    </View>
        </View>
       );
   return (

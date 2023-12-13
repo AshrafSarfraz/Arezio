@@ -14,6 +14,11 @@ import { ProfileSetup } from '../screens/ProfileSetup';
 import { Account } from '../screens/Account';
 import UserDetails from '../screens/UserDetails';
 import SplashWhite from '../screens/SplashWhite';
+import { Aboutus } from '../screens/Account/Aboutus';
+import { MyWallet } from '../screens/Account/MyWallet';
+import { ReferToEarn } from '../screens/Account/ReferToEarn';
+import { Language } from '../screens/Account/Language';
+import { WithDraw } from '../screens/Account/WithDraw';
 
 const Stack = createNativeStackNavigator()
 
@@ -39,6 +44,12 @@ const StackNavigation = () => {
                 <Stack.Screen name={'ProfileSetup'} component={ProfileSetup} />
                 <Stack.Screen name={'Account'} component={Account} />
                 <Stack.Screen name={'UserDetails'} component={UserDetails} />
+                <Stack.Screen name={'Aboutus'} component={Aboutus} />
+                <Stack.Screen name={'MyWallet'} component={MyWallet} />
+                <Stack.Screen name={'ReferToEarn'} component={ReferToEarn} />
+                <Stack.Screen name={'Language'} component={Language} />
+                <Stack.Screen name={'WithDraw'} component={WithDraw} />
+
             </Stack.Navigator>
         </NavigationContainer>
     )

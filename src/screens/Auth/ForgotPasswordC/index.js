@@ -6,6 +6,7 @@ import Input from '../../../components/reuseables/Input'
 import { COLOR } from '../../../data/StyleGuides'
 import Button from '../../../components/reuseables/Button'
 import { useNavigation } from '@react-navigation/native'
+import FastImage from 'react-native-fast-image'
 
 export default function ForgotPasswordC() {
   const navigation = useNavigation();
@@ -45,6 +46,8 @@ export default function ForgotPasswordC() {
   const [passwordVisiblec, setPasswordVisiblec] = useState(false)
   const [password, setpassword] = useState(null)
   const [passwordc, setpasswordc] = useState(null)
+  const [modalVisible3, setModalVisible3] = useState(false);
+
   const togglePassword = () => {
     setPasswordVisible(!passwordVisible)
   }
@@ -64,7 +67,13 @@ export default function ForgotPasswordC() {
   const closeModal = () => {
     setModalVisible(false);
   };
+  const openModal3 = () => {
+    setModalVisible3(true);
+};
 
+const closeModal3 = () => {
+    setModalVisible3(false);
+};
 
 
   return (
@@ -116,11 +125,29 @@ export default function ForgotPasswordC() {
           </View>
         </View>
 
-        <Button onPress={()=>navigation.navigate('ForgotPasswordOtp')} marginTop={'15%'} title={'Continue'} />
+        <Button onPress={openModal3} marginTop={'15%'} title={'Continue'} />
 
         <BotttomHeight />
       </ScrollView>
+      <Modal
+                    visible={modalVisible3}
+                    transparent
+                    animationType='fade'
+                    onRequestClose={closeModal3}
+                >
+                    <TouchableOpacity style={styles.modalContainer3} onPress={closeModal3}>
+                        <View style={styles.contentContainer3}>
+                            <FastImage
+                                resizeMode="stretch"
+                                style={{ width: 200, height: 200 }}
+                                source={require('../../../Assets/images/Forgot/Mobile.png')}
+                            />
+                            <Text style={styles.Option13}>Password reset successful!</Text>
+                            <Button onPress={()=>navigation.navigate('Signin')} marginTop={'8%'} title={'Back to login'} />
 
+                        </View>
+                    </TouchableOpacity>
+                </Modal>
     </View>
   )
 }

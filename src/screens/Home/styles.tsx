@@ -146,4 +146,47 @@ export const styles = StyleSheet.create({
     height: 18,
     width: 5,
   },
+  Rowcontainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 20,
+    left: 10,
+  },
+  iconContainer: {
+    height: 28,
+    width: 68,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  iconImage: {
+    height: 18,
+    width: 18,
+  },
+  text3: {
+    color: 'white',
+    fontSize: 13,
+    marginLeft: '5%',
+    bottom: 1,
+  }, mainText: {
+    fontSize: 14,
+    color: 'black',
+    marginLeft: '5%',
+    marginTop: '2%',
+  },
+  commentContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: '5%',
+    marginTop: '2%',
+  },
+  commentImage: {
+    height: 31,
+    width: 31,
+  },
+  commentInput: {
+    paddingLeft: 10,
+    width: '80%',
+  },
 });
