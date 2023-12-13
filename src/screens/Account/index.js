@@ -38,7 +38,7 @@ export const Account = ({navigation}) => {
                         </ImageBackground>
 
                     </View>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>navigation.navigate('MyPlan')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
                                 <Image source={require("../../Assets/images/Profile/plan.png")} />

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { styles } from './styles'
 
 
-export const ReferToEarn = ({navigation}) => {
+export const ReferToEarn = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const openModal = () => {
         setModalVisible(true);
@@ -16,12 +16,12 @@ export const ReferToEarn = ({navigation}) => {
     return (
         <View style={styles.Container}>
             <ScrollView>
-            <View style={styles.headerContainer}>
-  <TouchableOpacity onPress={()=>navigation.goBack()} style={styles.backButton}>
-    <Image style={styles.backIcon} source={require('../../../Assets/images/Signup/back.png')} />
-  </TouchableOpacity>
-  <Text style={styles.headerText}>Refer to Earn</Text>
-</View>
+                <View style={styles.headerContainer}>
+                    <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+                        <Image style={styles.backIcon} source={require('../../../Assets/images/Signup/back.png')} />
+                    </TouchableOpacity>
+                    <Text style={styles.headerText}>Refer to Earn</Text>
+                </View>
                 <View style={styles.Header}>
                     <View style={styles.HeaderSection1}>
                         <ImageBackground
@@ -50,9 +50,9 @@ export const ReferToEarn = ({navigation}) => {
                 <Text style={styles.Referrallink}>Referral link:</Text>
                 <View style={styles.LinkSection}>
                     <Text style={styles.Link_Text}>Sample link here</Text>
-                    <TouchableOpacity  onPress={openModal} style={styles.Copy_Img}>
+                    <TouchableOpacity onPress={openModal} style={styles.Copy_Img}>
 
-                        <Image  source={require('../../../Assets/images/Profile/ReferToEarn/copy.png')} />
+                        <Image source={require('../../../Assets/images/Profile/ReferToEarn/copy.png')} />
 
                     </TouchableOpacity>
                 </View>
@@ -65,10 +65,10 @@ export const ReferToEarn = ({navigation}) => {
                 >
                     <TouchableOpacity style={styles.modalContainer} onPress={closeModal}>
                         <View style={styles.contentContainer}>
-                        <Image  style={{marginTop:18,marginRight:40}} source={require('../../../Assets/images/Profile/ReferToEarn/copysuccess.png')} />
+                            <Image style={{ marginTop: 18, marginRight: 40 }} source={require('../../../Assets/images/Profile/ReferToEarn/copysuccess.png')} />
 
                             <Text style={styles.Option}>Copied</Text>
-                       
+
                         </View>
                     </TouchableOpacity>
                 </Modal>
