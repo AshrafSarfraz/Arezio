@@ -11,6 +11,7 @@ import ForgotPasswordChange from '../screens/Auth/ForgotPassword';
 import ForgotPasswordC from '../screens/Auth/ForgotPasswordC';
 import TabNavigator from './TabNavigation';
 import { ProfileSetup } from '../screens/ProfileSetup';
+import { Account } from '../screens/Account';
 
 const Stack = createNativeStackNavigator()
 
@@ -21,7 +22,9 @@ const screenOptionStyle = {
 const StackNavigation = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={screenOptionStyle} initialRouteName={'Splash'}>
+            <Stack.Navigator 
+            screenOptions={screenOptionStyle}
+             initialRouteName={'Splash'}>
                 <Stack.Screen name={'Splash'} component={Splash} />
                 <Stack.Screen name={'OnBoarding'} component={OnBoarding} />
                 <Stack.Screen name={'Signin'} component={Signin} />
@@ -31,8 +34,7 @@ const StackNavigation = () => {
                 <Stack.Screen name={'ForgotPasswordC'} component={ForgotPasswordC} />
                 <Stack.Screen name={'TabNavigator'} component={TabNavigator} />
                 <Stack.Screen name={'ProfileSetup'} component={ProfileSetup} />
-
-
+                <Stack.Screen name={'Account'} component={Account} />
 
             </Stack.Navigator>
         </NavigationContainer>

@@ -150,6 +150,7 @@ export default function SignUp() {
         </View>
 
         <Button onPress={()=>navigation.navigate('ProfileSetup')}  marginTop={'10%'} title={'Sign Up'} />
+
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>Already have an account?</Text>
           <TouchableOpacity style={styles.footerLinkContainer} onPress={() => navigation.navigate('Signin')}>

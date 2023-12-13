@@ -44,7 +44,7 @@ const COLOR = {
 
     black_light: 'rgba(33, 35, 30, 0.7)',
     blackLight_6: 'rgba(33, 35, 30, 0.6)',
-
+Blue:"#0090D8",
     lightRed_F2:'#FFF5F2',
     searchgrey:'#BEBEBE'
 };
