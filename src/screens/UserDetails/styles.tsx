@@ -63,8 +63,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     elevation:10,
-    marginLeft:10,
-    marginRight:10
+    marginLeft:20
   },
   image: {
     height: 54,
@@ -107,9 +106,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     elevation:10,
-    marginLeft:10,
-    marginRight:10
-
+    marginLeft:20
   },imageman:{
     height:46,
     width:46,

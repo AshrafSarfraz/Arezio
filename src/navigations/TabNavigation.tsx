@@ -15,7 +15,7 @@ const TabNavigation = () => {
                 position: 'absolute',
             height:70,
                 elevation: 0,
-                backgroundColor: COLOR.primary,
+                backgroundColor: '#006FA6',
                 borderTopColor: 'transparent',
               borderRadius:20,
                 bottom:20,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         height: 3,
-        backgroundColor: COLOR.primary,
+        backgroundColor: '#014568',
     },title:{
         marginTop:'10%',fontSize:10,fontFamily:FONT.Urbanist_Medium
     }

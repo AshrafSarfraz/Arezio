@@ -3,13 +3,15 @@ import React from 'react'
 import { COLOR, FONT } from '../../data/StyleGuides'
 import { styles } from './styles'
 import BotttomHeight from '../../components/reuseables/BotttomHeight';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Home() {
-
+export default function Home({}) {
+const navigation = useNavigation()
 
  
       const renderItem = ({ item }) => (
-        <View style={styles.box}>
+        <TouchableOpacity onPress={()=>navigation.navigate('UserDetails')} style={styles.box}>
           <Image style={styles.image} source={item.imageUrl } />
           <View style={styles.rowContainer}>
           <Text style={styles.text}>{item.text}</Text>
@@ -17,7 +19,7 @@ export default function Home() {
           </View>
           <Image style={styles.imagedate} source={require('../../Assets/images/Home/date.png')} />
 
-        </View>
+        </TouchableOpacity>
       );
     
 
@@ -93,6 +95,7 @@ export default function Home() {
         keyExtractor={(item) => item.id}
         horizontal
         renderItem={renderItem}
+        showsHorizontalScrollIndicator={false}
         contentContainerStyle={{marginTop:'5%'}}
       />
    </View>
@@ -105,6 +108,7 @@ export default function Home() {
         keyExtractor={(item) => item.id}
         horizontal
         renderItem={renderItem2}
+      
         contentContainerStyle={{marginTop:'5%'}}
         showsHorizontalScrollIndicator={false}
       />
@@ -122,7 +126,7 @@ export default function Home() {
         contentContainerStyle={{marginTop:'5%'}}
       />
 </View>
-<BotttomHeight/>
+<View style={{height:150}}/>
 </ScrollView>
 
     </View>
@@ -133,6 +137,8 @@ export default function Home() {
 const data = [
     { id: '1', text: 'Ayla Fergusan', imageUrl: require('../../Assets/images/Home/girldp.png') },
     { id: '2', text: 'Ayla Fergusan', imageUrl: require('../../Assets/images/Home/girldp.png')},
+    { id: '3', text: 'Ayla Fergusan', imageUrl: require('../../Assets/images/Home/girldp.png')},
+
     // Add more items as needed
   ];
 
