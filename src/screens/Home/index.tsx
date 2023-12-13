@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList, ImageBackground ,ScrollView, TextInput} from 'react-native'
+import { View, Text, Image, FlatList, ImageBackground ,ScrollView, TextInput, StatusBar} from 'react-native'
 import React from 'react'
 import { COLOR, FONT } from '../../data/StyleGuides'
 import { styles } from './styles'
@@ -92,6 +92,7 @@ const navigation = useNavigation()
       );
   return (
     <View style={{flex: 1,backgroundColor:COLOR.white}}>
+
 <ScrollView>
 
 

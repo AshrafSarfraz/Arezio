@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { COLOR, FONT } from '../data/StyleGuides';
 import Home from '../screens/Home';
 import { Account } from '../screens/Account';
+import Reels from '../screens/Reels';
+import Chat from '../screens/Chats';
 
 
 const Tab = createBottomTabNavigator();
@@ -60,7 +62,7 @@ const TabNavigation = () => {
 
 <Tab.Screen
                 name={'Reel'}
-                component={Home}
+                component={Reels}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.tabBarIconContainer}>
@@ -76,7 +78,7 @@ const TabNavigation = () => {
 
 <Tab.Screen
                 name={'Chats'}
-                component={Home}
+                component={Chat}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.tabBarIconContainer}>
