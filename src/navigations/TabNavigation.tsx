@@ -3,6 +3,7 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { COLOR, FONT } from '../data/StyleGuides';
 import Home from '../screens/Home';
+import { Account } from '../screens/Account';
 
 
 const Tab = createBottomTabNavigator();
@@ -91,7 +92,7 @@ const TabNavigation = () => {
 
             <Tab.Screen
                 name={'a'}
-                component={Home}
+                component={Account}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.tabBarIconContainer}>

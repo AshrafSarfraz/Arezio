@@ -2,12 +2,13 @@ import { View, Text, SafeAreaView, ScrollView, Image, ImageBackground, Touchable
 import React from 'react'
 import { styles } from './styles'
 import { Toggle_Button } from '../../components/reuseables/Toggle_Button'
+import BotttomHeight from '../../components/reuseables/BotttomHeight'
 
 export const Account = () => {
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.Container}>
             <ScrollView>
-                <View style={styles.Container}>
+                <View >
                     <View style={styles.Header}>
                         <View style={styles.Header_Img}>
                             <Image source={require("../../Assets/images/Profile/logo.png")} />
@@ -146,7 +147,7 @@ export const Account = () => {
                     </TouchableOpacity>
                 </View>
 
-
+<View style={{height:150}}/>
             </ScrollView>
         </SafeAreaView>
 
