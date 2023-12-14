@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center',
-  marginTop:'55%'
+     marginTop:'50%',
+     marginBottom:"5%"
   },
   
   footerText: {
@@ -40,7 +41,7 @@ export const styles = StyleSheet.create({
   signInText: {
     fontSize: 14,
     fontFamily: FONT.Urbanist_Medium,
-    color: COLOR.black,
+    color: COLOR.primary,
     marginTop: '2%',
   },
   inputContainer: {

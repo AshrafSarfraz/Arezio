@@ -92,7 +92,7 @@ export const Account = ({navigation}) => {
 
                             </View>
                             <View style={styles.Plan_Text}>
-                                <Text style={styles.Plan_TextStyles}>Reffer To earn</Text>
+                                <Text style={styles.Plan_TextStyles}>Refer to Earn</Text>
                             </View>
                             <View style={styles.Arrow_Img}>
                                 <Image source={require("../../Assets/images/Profile/Arrow.png")} />

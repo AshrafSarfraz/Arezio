@@ -5,6 +5,7 @@ import Input from '../../../components/reuseables/Input'
 import CustomCheckbox from '../../../components/reuseables/CheckBox'
 import Button from '../../../components/reuseables/Button'
 import { styles } from './styles'
+import BotttomHeight from '../../../components/reuseables/BotttomHeight'
 
 export default function Signin({navigation}) {
   const [NextDoorid, setNextDoorid] = useState(null)
@@ -62,6 +63,7 @@ addRight={<Image source={passwordVisible ? require('../../../Assets/images/Signi
     <Text style={styles.footerLink}>Sign Up</Text>
   </TouchableOpacity>
 </View>
+<BotttomHeight/>
 </ScrollView>
 
     </View>
