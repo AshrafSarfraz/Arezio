@@ -78,7 +78,7 @@ const Plans = ({ item }) => {
                 </TouchableOpacity>
             </ImageBackground>
             <View style={styles.Navigation}>
-                <Image source={item.navigation} />
+                <Image style={{height:"15%",width:"24%"}} source={item.navigation} />
             </View>
         </View>
     )

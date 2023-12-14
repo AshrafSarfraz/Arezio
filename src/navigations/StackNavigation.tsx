@@ -22,6 +22,7 @@ import { WithDraw } from '../screens/Account/WithDraw';
 import { MyPlan } from '../screens/Account/MyPlan';
 import { SubcriptionPlan } from '../screens/Account/SubcriptionPlan';
 import { Payment } from '../screens/Account/Payment';
+import { EditProfile } from '../screens/Account/EditProfile';
 
 const Stack = createNativeStackNavigator()
 
@@ -57,6 +58,7 @@ const StackNavigation = () => {
                 <Stack.Screen name={'MyPlan'} component={MyPlan} />
                 <Stack.Screen name={'SubcriptionPlan'} component={SubcriptionPlan} />
                 <Stack.Screen name={'payment'} component={Payment} />
+                <Stack.Screen name={'EditProfile'} component={EditProfile} />
 
             </Stack.Navigator>
         </NavigationContainer>

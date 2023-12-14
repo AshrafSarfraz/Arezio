@@ -43,7 +43,9 @@ export const styles = StyleSheet.create({
 
     },
     User_Image: {
-        margin: 15
+        margin: 10,
+        height:50,
+        width:50
     },
     User_Name: {
         flex: 1,
@@ -80,8 +82,12 @@ export const styles = StyleSheet.create({
     Plan_Img: {
         flex: 0,
         margin: 10,
-        marginTop: 15,
+        marginTop: 10,
         
+    },
+    Plan_ImgStyles:{
+height:35,
+width:35
     },
     Plan_Text: {
         flex: 1,
@@ -100,8 +106,13 @@ export const styles = StyleSheet.create({
         flex: 0,
         alignContent: "flex-end",
         alignItems: "flex-end",
-        margin: 10,
+        margin: 5,
         marginTop: 18
 
+    },
+    Arrow_ImgStyles:{
+        height:25,
+        width:25
     }
+    
 });

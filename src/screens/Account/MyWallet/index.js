@@ -29,7 +29,7 @@ export const MyWallet = ({ navigation }) => {
             <Text style={styles.Title}>History</Text>
             <View style={[styles.WalletCard, { marginTop: '4%' }]}>
               <View style={styles.WalletImg}>
-                <Image source={require('../../../Assets/images/Profile/Mywallet/Avatar.png')} />
+                <Image style={{width:50,height:50}}source={require('../../../Assets/images/Profile/Mywallet/Avatar.png')} />
               </View>
               <View style={styles.User_Name}>
                 <Text style={styles.User_NameStyles}>Dennis Reynolds</Text>
@@ -45,7 +45,7 @@ export const MyWallet = ({ navigation }) => {
             </View>
             <View style={styles.WalletCard}>
               <View style={styles.WalletImg}>
-                <Image source={require('../../../Assets/images/Profile/Mywallet/Avatar.png')} />
+              <Image style={{width:50,height:50}}source={require('../../../Assets/images/Profile/Mywallet/Avatar.png')} />
               </View>
               <View style={styles.User_Name}>
                 <Text style={styles.User_NameStyles}>Dennis Reynolds</Text>
@@ -61,7 +61,7 @@ export const MyWallet = ({ navigation }) => {
             </View>
             <View style={styles.WalletCard}>
               <View style={styles.WalletImg}>
-                <Image source={require('../../../Assets/images/Profile/Mywallet/Avatar.png')} />
+              <Image style={{width:50,height:50}}source={require('../../../Assets/images/Profile/Mywallet/Avatar.png')} />
               </View>
               <View style={styles.User_Name}>
                 <Text style={styles.User_NameStyles}>Dennis Reynolds</Text>
@@ -75,7 +75,7 @@ export const MyWallet = ({ navigation }) => {
 
               </View>
             </View>
-            <Button onPress={() => navigation.navigate('WithDraw')} marginTop={'55%'} title={'Withdraw'} />
+            <Button onPress={() => navigation.navigate('WithDraw')} marginTop={'40%'} title={'Withdraw'} />
 
           </View>
         </View>

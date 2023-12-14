@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
     },
     WalletImg: {
         flex: 0,
-        margin:15
+        margin:10
     },
     User_Name:{
         flex:1
@@ -62,7 +62,7 @@ export const styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: "600",
         fontFamily: FONT.Urbanist,
-        paddingTop:15
+        paddingTop:20
     },
     WalletDate:{
         fontSize: 10,
@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "600",
         fontFamily: FONT.Urbanist,
-        paddingTop:18
+        paddingTop:20
 
     },
     Ratting_Img:{

@@ -11,7 +11,7 @@ export const Account = ({navigation}) => {
                 <View >
                     <View style={styles.Header}>
                         <View style={styles.Header_Img}>
-                            <Image source={require("../../Assets/images/Profile/logo.png")} />
+                            <Image style={{height:50,width:50}} source={require("../../Assets/images/Profile/logo.png")} />
                         </View>
                         <View style={styles.HeaderTitle}>
 
@@ -22,8 +22,9 @@ export const Account = ({navigation}) => {
 
                     <View >
                         <ImageBackground style={styles.User_Card} source={require("../../Assets/images/Profile/Background.png")}>
-                            <Image style={styles.Edit_Img} source={require("../../Assets/images/Profile/edit.png")} />
-
+                            <TouchableOpacity style={styles.Edit_Img} onPress={()=>navigation.navigate('EditProfile')}>
+                            <Image style={{height:30,width:30}} source={require("../../Assets/images/Profile/edit.png")} />
+                            </TouchableOpacity>
                             <View style={styles.User_Img}>
                                 <ImageBackground style={styles.User_BackGroundImage} source={require("../../Assets/images/Profile/Avatar_Background.png")}>
                                     <Image style={styles.User_Image} source={require("../../Assets/images/Profile/Avatar.png")} />
@@ -41,14 +42,14 @@ export const Account = ({navigation}) => {
                     <TouchableOpacity onPress={()=>navigation.navigate('MyPlan')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
-                                <Image source={require("../../Assets/images/Profile/plan.png")} />
+                                <Image style={styles.Plan_ImgStyles} source={require("../../Assets/images/Profile/plan.png")} />
 
                             </View>
                             <View style={styles.Plan_Text}>
                                 <Text style={styles.Plan_TextStyles}>My Plan</Text>
                             </View>
                             <View style={styles.Arrow_Img}>
-                                <Image source={require("../../Assets/images/Profile/Arrow.png")} />
+                                <Image style={styles.Arrow_ImgStyles} source={require("../../Assets/images/Profile/Arrow.png")} />
 
                             </View>
                         </View>
@@ -57,14 +58,14 @@ export const Account = ({navigation}) => {
                     <TouchableOpacity>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
-                                <Image source={require("../../Assets/images/Profile/book.png")} />
+                                <Image style={styles.Plan_ImgStyles}  source={require("../../Assets/images/Profile/book.png")} />
 
                             </View>
                             <View style={styles.Plan_Text}>
                                 <Text style={styles.Plan_TextStyles}>My Posts</Text>
                             </View>
                             <View style={styles.Arrow_Img}>
-                                <Image source={require("../../Assets/images/Profile/Arrow.png")} />
+                            <Image style={styles.Arrow_ImgStyles} source={require("../../Assets/images/Profile/Arrow.png")} />
 
                             </View>
                         </View>
@@ -72,14 +73,14 @@ export const Account = ({navigation}) => {
                     <TouchableOpacity onPress={()=>navigation.navigate('MyWallet')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
-                                <Image source={require("../../Assets/images/Profile/wallet.png")} />
+                                <Image style={styles.Plan_ImgStyles}  source={require("../../Assets/images/Profile/wallet.png")} />
 
                             </View>
                             <View style={styles.Plan_Text}>
                                 <Text style={styles.Plan_TextStyles}>My Wallet</Text>
                             </View>
                             <View style={styles.Arrow_Img}>
-                                <Image source={require("../../Assets/images/Profile/Arrow.png")} />
+                            <Image style={styles.Arrow_ImgStyles} source={require("../../Assets/images/Profile/Arrow.png")} />
 
                             </View>
                         </View>
@@ -88,14 +89,14 @@ export const Account = ({navigation}) => {
                     <TouchableOpacity onPress={()=>navigation.navigate('ReferToEarn')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
-                                <Image source={require("../../Assets/images/Profile/user-add.png")} />
+                                <Image  style={styles.Plan_ImgStyles}  source={require("../../Assets/images/Profile/user-add.png")} />
 
                             </View>
                             <View style={styles.Plan_Text}>
                                 <Text style={styles.Plan_TextStyles}>Reffer To earn</Text>
                             </View>
                             <View style={styles.Arrow_Img}>
-                                <Image source={require("../../Assets/images/Profile/Arrow.png")} />
+                            <Image style={styles.Arrow_ImgStyles} source={require("../../Assets/images/Profile/Arrow.png")} />
 
                             </View>
                         </View>
@@ -103,14 +104,14 @@ export const Account = ({navigation}) => {
                     <TouchableOpacity onPress={()=>navigation.navigate('Language')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
-                                <Image source={require("../../Assets/images/Profile/translate.png")} />
+                                <Image style={styles.Plan_ImgStyles}  source={require("../../Assets/images/Profile/translate.png")} />
                                 
                             </View>
                             <View style={styles.Plan_Text}>
                                 <Text style={styles.Plan_TextStyles}>Language</Text>
                             </View>
                             <View style={styles.Arrow_Img}>
-                                <Image source={require("../../Assets/images/Profile/Arrow.png")} />
+                            <Image style={styles.Arrow_ImgStyles} source={require("../../Assets/images/Profile/Arrow.png")} />
 
                             </View>
                         </View>
@@ -118,7 +119,7 @@ export const Account = ({navigation}) => {
                     <TouchableOpacity>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
-                                <Image source={require("../../Assets/images/Profile/Group.png")} />
+                                <Image style={styles.Plan_ImgStyles}  source={require("../../Assets/images/Profile/Group.png")} />
 
                             </View>
                             <View style={styles.Plan_Text}>
@@ -134,14 +135,14 @@ export const Account = ({navigation}) => {
                     <TouchableOpacity onPress={()=>navigation.navigate('Aboutus')}>
                         <View style={styles.Section}>
                             <View style={styles.Plan_Img}>
-                                <Image source={require("../../Assets/images/Profile/people.png")} />
+                                <Image style={styles.Plan_ImgStyles}  source={require("../../Assets/images/Profile/people.png")} />
 
                             </View>
                             <View style={styles.Plan_Text}>
                                 <Text style={styles.Plan_TextStyles}>About us</Text>
                             </View>
                             <View style={styles.Arrow_Img}>
-                                <Image source={require("../../Assets/images/Profile/Arrow.png")} />
+                            <Image style={styles.Arrow_ImgStyles} source={require("../../Assets/images/Profile/Arrow.png")} />
 
                             </View>
                         </View>
