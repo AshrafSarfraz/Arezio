@@ -19,7 +19,6 @@ import { MyWallet } from '../screens/Account/MyWallet';
 import { ReferToEarn } from '../screens/Account/ReferToEarn';
 import { Language } from '../screens/Account/Language';
 import { WithDraw } from '../screens/Account/WithDraw';
-import { SubcriptionPlan } from '../screens/Account/Subscription';
 
 const Stack = createNativeStackNavigator()
 
@@ -29,6 +28,8 @@ const screenOptionStyle = {
 
 const StackNavigation = () => {
     return (
+        // <MyPlan/>
+        // <SubcriptionPlan/>
         <NavigationContainer>
             <Stack.Navigator 
             screenOptions={screenOptionStyle}
@@ -50,7 +51,7 @@ const StackNavigation = () => {
                 <Stack.Screen name={'ReferToEarn'} component={ReferToEarn} />
                 <Stack.Screen name={'Language'} component={Language} />
                 <Stack.Screen name={'WithDraw'} component={WithDraw} />
-                <Stack.Screen name={'SubcriptionPlan'} component={SubcriptionPlan} />
+
             </Stack.Navigator>
         </NavigationContainer>
     )
