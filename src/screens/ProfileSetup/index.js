@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { styles } from './styles'
 import Button from '../../components/reuseables/Button';
 import FastImage from 'react-native-fast-image';
+import { COLOR } from '../../data/StyleGuides';
+import BotttomHeight from '../../components/reuseables/BotttomHeight';
 
 export const ProfileSetup = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -59,19 +61,19 @@ export const ProfileSetup = ({ navigation }) => {
                     <Text style={styles.Label}> What’s your date of birth?</Text>
                     <View style={styles.Date}>
                         <View style={styles.Day}>
-                            <Text style={styles.DateTextStyle}>DD</Text>
+                           <TextInput maxLength={2} placeholder='DD' placeholderTextColor={COLOR.grey_1}  style={styles.DateTextStyle}/>
                         </View>
                         <View style={styles.Dash}>
                             <Text style={styles.DashStyles}>-</Text>
                         </View>
                         <View style={styles.Month}>
-                            <Text style={styles.DateTextStyle}>MM</Text>
+                        <TextInput maxLength={2} placeholder='MM' placeholderTextColor={COLOR.grey_1}  style={styles.DateTextStyle}/>
                         </View>
                         <View style={styles.Dash}>
                             <Text style={styles.DashStyles}>-</Text>
                         </View>
                         <View style={styles.Year}>
-                            <Text style={styles.DateTextStyle}>Year</Text>
+                        <TextInput maxLength={4} placeholder='Year' placeholderTextColor={COLOR.grey_1}  style={styles.DateTextStyle}/>
                         </View>
                     </View>
                 </View>
@@ -118,7 +120,7 @@ export const ProfileSetup = ({ navigation }) => {
                                 source={require('../../Assets/images/Profile/success.gif')}
                             />
                             <Text style={styles.Option13}>Alright! Your account is ready to use!</Text>
-                            <Button marginTop={'8%'} title={'Continue'} />
+                            <Button marginTop={'8%'} title={'Continue'}  onPress={()=>{navigation.navigate('SubcriptionPlan')}}/>
 
                         </View>
                     </TouchableOpacity>
@@ -151,6 +153,7 @@ export const ProfileSetup = ({ navigation }) => {
                     </TouchableOpacity>
                 </Modal>
             </ScrollView>
+            <BotttomHeight/>
         </View>
     )
 }

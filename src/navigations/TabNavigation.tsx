@@ -1,149 +1,134 @@
-import { StyleSheet, View, Image, Text } from 'react-native'
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { COLOR, FONT } from '../data/StyleGuides';
+
+import { View, Text, StyleSheet, ImageBackground, Touchable, TouchableOpacity, Image } from 'react-native'
+import React, { useState } from 'react'
+import { COLOR, FONT } from '../data/StyleGuides'
 import Home from '../screens/Home';
-import { Account } from '../screens/Account';
 import Reels from '../screens/Reels';
 import Chat from '../screens/Chats';
+import { Account } from '../screens/Account';
 
-
-const Tab = createBottomTabNavigator();
-const TabNavigation = () => {
-    return (
-        <Tab.Navigator
-
-            screenOptions={{ headerShown: false, tabBarLabelStyle: { display: 'none' }, tabBarHideOnKeyboard: true,
-            tabBarStyle: {
-                position: 'absolute',
-            height:70,
-                elevation: 0,
-                backgroundColor: '#006FA6',
-                borderTopColor: 'transparent',
-              borderRadius:20,
-                bottom:20,
-                marginHorizontal:'5%'
-            }
-            
-            }}>
-
-            <Tab.Screen
-                name={'Home'}
-                component={Home}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabBarIconContainer}>
-                            <Image
-                                source={focused ? require('../Assets/images/Home/Home.png') : require('../Assets/images/Home/homegrey.png') }
-                                style={styles.tabBarIcon}
-                            />
-                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Home</Text>
-                        </View>
-                    ),
-                }}
-            />
-
-<Tab.Screen
-                name={'Birthday'}
-                component={Home}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabBarIconContainer}>
-                            <Image
-                                source={focused ? require('../Assets/images/Home/Calendar.png') : require('../Assets/images/Home/Calendargrey.png') }
-                                style={styles.tabBarIcon}
-                            />
-                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Birthdays</Text>
-                        </View>
-                    ),
-                }}
-            />
-
-
-<Tab.Screen
-                name={'Reel'}
-                component={Reels}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabBarIconContainer}>
-                            <Image
-                                source={focused ? require('../Assets/images/Home/video-vertical.png') : require('../Assets/images/Home/videoverticalgrey.png') }
-                                style={styles.tabBarIcon}
-                            />
-                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Reels</Text>
-                        </View>
-                    ),
-                }}
-            />
-
-<Tab.Screen
-                name={'Chats'}
-                component={Chat}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabBarIconContainer}>
-                            <Image
-                                source={focused ? require('../Assets/images/Home/Chat.png') : require('../Assets/images/Home/Chatrey.png') }
-                                style={styles.tabBarIcon}
-                            />
-                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Chats</Text>
-                        </View>
-                    ),
-                }}
-            />
-
-            <Tab.Screen
-                name={'a'}
-                component={Account}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={styles.tabBarIconContainer}>
-                            <Image
-                                source={focused ? require('../Assets/images/Home/Profile.png') : require('../Assets/images/Home/Profilegrey.png')}
-                                style={styles.tabBarHomeIcon} />
-                            <Text style={[styles.title,{color:focused ? COLOR.white : COLOR.grey, fontFamily: focused ? FONT.Urbanist_Bold :FONT.Urbanist_Medium }]}>Profile</Text>
-
-
-                        </View>
-                    ),
-                }}
-            />
-
-        
-            
-        </Tab.Navigator >
-    )
+interface BottomProps{
+    navigation:any
 }
 
-export default TabNavigation
+const Bottom_Nav:React.FC<BottomProps> = ({navigation}) => {
+    const [BtnState,setBtnState]=useState(0)
+  return (
+    <View  style={styles.Container} >
+        {
+    BtnState === 0 ? <Home /> :
+    BtnState === 1 ? <Home /> :
+    BtnState === 2 ? <Reels  /> :
+    BtnState === 3 ? <Chat  /> :
+    BtnState === 4 ? <Account  navigation={navigation}/> :
+    null
+}
 
-const styles = StyleSheet.create({
-    tabBarIconContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    
-    },
-    tabBarIcon: {
-        height: 20,
-        width: 20,
-        resizeMode: 'contain'
-    },
-    tabBarHomeIcon: {
-        height: 20,
-        width: 26,
-        resizeMode: 'contain'
-    },
-    activeTabBar: {
-        position: 'absolute',
-        top: 25,
-        left: 0,
-        right: 0,
-        height: 3,
-        backgroundColor: '#014568',
-    },title:{
-        marginTop:'10%',fontSize:10,fontFamily:FONT.Urbanist_Medium
-    }
+      <View  style={styles.DrawerCont}>
+        <ImageBackground source={require('../Assets/images/Bottom/Bottom.png')}   style={styles.Drawer_Img}  imageStyle={{width:'100%',height:'100%',borderRadius:15}} >
+         <TouchableOpacity  style={styles.Btn} onPress={()=>{setBtnState(0)}} >
+            {
+              BtnState===0? <Image  source={require('../Assets/images/Home/Home.png')} style= {styles.Home}/> :
+             <Image  source={require('../Assets/images/Home/homegrey.png')} style= {styles.Home}/>  
+           }
+            <Text  style={[styles.Btn_Txt,BtnState===0?styles.Active_Txt:null]}>Home</Text> 
+         </TouchableOpacity>
+         <TouchableOpacity  style={styles.Btn} onPress={()=>{setBtnState(1)}} >
+            {
+              BtnState===1? <Image  source={require('../Assets/images/Home/Calendar.png')} style= {styles.Home}/> :
+             <Image  source={require('../Assets/images/Home/Calendargrey.png')} style= {styles.Home}/>  
+           }
+            <Text  style={[styles.Btn_Txt,BtnState===1?styles.Active_Txt:null]}>Birthdays</Text> 
+         </TouchableOpacity>
+         <TouchableOpacity  style={styles.Btn} onPress={()=>{setBtnState(2)}} >
+            {
+              BtnState===2? <Image  source={require('../Assets/images/Home/video-vertical.png')} style= {styles.Home}/> :
+             <Image  source={require('../Assets/images/Home/videoverticalgrey.png')} style= {styles.Home}/>  
+           }
+            <Text  style={[styles.Btn_Txt,BtnState===2?styles.Active_Txt:null]}>Reels</Text> 
+         </TouchableOpacity>
+         <TouchableOpacity  style={styles.Btn} onPress={()=>{setBtnState(3)}} >
+            {
+              BtnState===3? <Image  source={require('../Assets/images/Home/Chat.png')} style= {styles.Home}/> :
+             <Image  source={require('../Assets/images/Home/Chatrey.png')} style= {styles.Home}/>  
+           }
+            <Text  style={[styles.Btn_Txt,BtnState===3?styles.Active_Txt:null]}>Chats</Text> 
+         </TouchableOpacity>
+         <TouchableOpacity  style={styles.Btn} onPress={()=>{setBtnState(4)}} >
+            {
+              BtnState===4? <Image  source={require('../Assets/images/Home/Profile.png')} style= {styles.Home}/> :
+             <Image  source={require('../Assets/images/Home/Profilegrey.png')} style= {styles.Home}/>  
+           }
+            <Text  style={[styles.Btn_Txt,BtnState===4?styles.Active_Txt:null]}>Profile</Text> 
+         </TouchableOpacity>
+        </ImageBackground>
+      </View>
+    </View>
+  )
+}
+
+export default Bottom_Nav
+
+const styles=StyleSheet.create({
+Container:{
+    backgroundColor:"#FFFFFF",
+    flex:1
+},
+DrawerCont:{
+   width:"100%",
+   position:'absolute',
+   bottom:0,
+  
+ 
+},
+Drawer_Img:{
+    flexDirection:"row",
+    justifyContent:'space-evenly',
+    alignItems:"center",
+    width:'90%',
+    height:77,
+    bottom:15,
+    alignSelf:'center',
+},
+Btn:{
+ alignItems:"center"
+},
+Home:{
+    width:20,height:20,resizeMode:'contain',
+},
+Btn_Txt:{
+    marginTop:'17%',
+    fontSize:10,
+    fontFamily:FONT.Urbanist_Medium ,
+    lineHeight:15,
+    color:COLOR.grey
+},
+Active_Txt:{
+    marginTop:'17%',
+    fontSize:10,
+    fontFamily:FONT.Urbanist_Bold ,
+    lineHeight:15,
+    color:COLOR.white
+}
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -207,11 +207,9 @@ export const styles = StyleSheet.create({
   },
   DateTextStyle: {
     textAlign: "center",
-    paddingTop: "20%",
-    paddingBottom: "20%",
     fontSize: 14,
     fontWeight: "400",
-    color: COLOR.grey_1,
+    color: '#000000',
     fontFamily: FONT.Urbanist_Regular
   },
   Dash: {
