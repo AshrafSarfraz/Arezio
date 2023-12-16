@@ -50,7 +50,8 @@ export const styles = StyleSheet.create({
   },
   Dropdown_Title: {
     flex: 1,
-    padding: "5%"
+    padding: "5%",
+    color:COLOR.grey_1
   },
   Dropdown_Arrow: {
     flex: 1,
