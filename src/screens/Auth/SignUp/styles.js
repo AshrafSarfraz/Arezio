@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
   signInText: {
     fontSize: 14,
     fontFamily: FONT.Urbanist_Medium,
-    color: COLOR.black,
+    color: COLOR.primary,
     marginTop: '2%',
   },
   inputContainer: {
